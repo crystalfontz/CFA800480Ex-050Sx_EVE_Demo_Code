@@ -1,4 +1,4 @@
-# CFAF800480Ex-050Sx EVE Demo Code
+# CFA800480Ex-050Sx EVE Demo Code
 
 This example Seeeduino (Arduino clone) code is for the Crystalfontz line of 5" displays powered by a Bridgetek EVE chip. These displays are driven by the powerful BT817 chip and are available in capacitive touch, resistive touch, and non-touch. They all come with a sunlight readable backlight that boasts 1000 nits when no additional layer is on top of the display. Please refer to the datasheets for more information.
 
