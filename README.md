@@ -6,18 +6,18 @@ For more information on our full list of EVE displays, please click [here](https
 
 ## Display information
 5" EVE Displays\
-[CFAF800480E1-050SC-A2](https://www.crystalfontz.com/product/cfaf800480e1050sca2) - Capacitive Touch\
-[CFAF800480E2-050SC-A2](https://www.crystalfontz.com/product/cfaf800480e2050sca2) - Capacitive Touch With Overhanging Glass\
-[CFAF800480E1-050SR-A2](https://www.crystalfontz.com/product/cfaf800480e1050sra2) - Resistive Touch\
-[CFAF800480E1-050SN-A2](https://www.crystalfontz.com/product/cfaf800480e1050sna2) - Non-Touch
+[CFA800480E3-050SW](https://www.crystalfontz.com/product/cfa800480e3050sw) - Capacitive Touch\
+[CFA800480E3-050SC](https://www.crystalfontz.com/product/cfa800480e3050sc) - Capacitive Touch With Overhanging Glass\
+[CFA800480E3-050SR](https://www.crystalfontz.com/product/cfa800480e3050sr) - Resistive Touch\
+[CFA800480E3-050SN](https://www.crystalfontz.com/product/cfa800480e3050sn) - Non-Touch
 
 
  
 Full Functional Seeeduino Demo Kits for these products can be found here:  
-[CFAF800480E1-050SC-A2-2](https://www.crystalfontz.com/product/cfaf800480e1050sca22) - Capacitive Touch Dev Kit\
-[CFAF800480E2-050SC-A2-2](https://www.crystalfontz.com/product/cfaf800480e2050sca22) - Capacitive Touch With Overhanging Glass Dev Kit\
-[CFAF800480E1-050SR-A2-2](https://www.crystalfontz.com/product/cfaf800480e1050sra22) - Resistive Touch Dev Kit\
-[CFAF800480E1-050SN-A2-2](https://www.crystalfontz.com/product/cfaf800480e1050sna22) - Non-Touch Dev Kit
+[CFAF800480E1-050SC-KIT](https://www.crystalfontz.com/product/cfa800480e3050sckit) - Capacitive Touch Dev Kit\
+[CFAF800480E2-050SC-KIT](https://www.crystalfontz.com/product/cfa800480e3050sckit) - Capacitive Touch With Overhanging Glass Dev Kit\
+[CFAF800480E1-050SR-KIT](https://www.crystalfontz.com/product/cfa800480e3050srkit) - Resistive Touch Dev Kit\
+[CFAF800480E1-050SN-KIT](https://www.crystalfontz.com/product/cfa800480e3050snkit) - Non-Touch Dev Kit
 
 ## Navigating the Code
 
@@ -44,6 +44,35 @@ To toggle on or off different demonstrations, some defines in "CFA10100_defines.
 `MARBLE_DEMO` - Toggled to 1 will look in the uSD card and pull "BLUEMARB.RAW" and demonstrate the earth rotating and bouncing around in screen in place of the ball\
 `TOUCH_DEMO` - Toggled to 1 will enable the touch screen (only compatible on touch versions of the display)\
 `VIDEO_DEMO` - Toggled to 1 will enable the video playback. The video must already be programmed into flash by using PROGRAM_FLASH_FROM_USD (Ice_400.avi)
+
+## Flash Usage
+Creating the files:
+1. Open [EVE Asset Builder](https://brtchip.com/eab/)
+2. In the Image Converter tool, use the "ADD" button to load the image
+3. Set the output format to "COMPRESSED_RGBA_ASTC_8x8_KHR" and ASTC Preset to "thorough"
+4. Click Convert and rename the extension of the file to .a8z
+5. The file names are hard coded in the firmware. These names can be found starting on line 104 of demos.cpp
+
+Configuring the demo code:
+1. Load the files on an SD card and connect to the Seeeduino (see pinout)
+2. Set PROGRAM_FLASH_FROM_USD to 0
+3. Compile and upload the firmware
+4. Watch the serial monitor, the code will export the memory locations that are needed for the demo code to work
+5. Take the macros that are exported from the code and insert them on line 92 of CFA10100_defines.h
+6. Set PROGRAM_FLASH_FROM_USD to 1
+7. Set VIDEO_DEMO to 1 
+8. Compile and upload the code
+
+Here is an example of the macros that will exported from the code:
+#define FLASH_SECTOR_MARBLE (1UL)
+#define FLASH_LENGTH_MARBLE (14400UL) // sectors: 3
+#define FLASH_SECTOR_SPLASH (5UL)
+#define FLASH_LENGTH_SPLASH (153600UL) // sectors: 37
+#define FLASH_SECTOR_CLOUDS (43UL)
+#define FLASH_LENGTH_CLOUDS (153600UL) // sectors: 37
+#define FLASH_SECTOR_ICE_FPV_512x300 (81UL)
+#define FLASH_LENGTH_ICE_FPV_512x300 (12882892UL) // sectors: 3145
+
 
 
 ## Connection Details

@@ -70,7 +70,7 @@
 //
 #define BMP_DEMO             (1)  //Images must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
-#define   BMP_SCROLL         (1)  //1=scrolling background (cloud.a8z)
+#define   BMP_SCROLL         (0)  //1=scrolling background (cloud.a8z)
                                   //0=static image (splash.a8z)
 #define SOUND_DEMO           (0)  //Uses uSD
 #define   SOUND_VOICE        (1)  //1=VOI_8K.RAW, 0=MUS_8K.RAW
@@ -78,8 +78,8 @@
 #define LOGO_DEMO            (1)  //Rotating logo (the PNG or ARGB image
                                   //data is stored in the Seeeduino's flash)
 #define LOGO_PNG_0_ARGB2_1   (1)  //Compressed ARGB is 5408 bytes smaller
-#define BOUNCE_DEMO          (0)  //Ball-and-rubber-band demo.
-#define MARBLE_DEMO          (1)  //Marble must already be programmed into
+#define BOUNCE_DEMO          (1)  //Ball-and-rubber-band demo.
+#define MARBLE_DEMO          (0)  //Marble must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
                                   //(bluemarb.a8z)
 #define TOUCH_DEMO           (1)
@@ -90,15 +90,15 @@
 // These should have been copied from the debug console when
 // you built with PROGRAM_FLASH_FROM_USD set
 #define FLASH_SECTOR_MARBLE (1UL)
-#define FLASH_LENGTH_MARBLE (14400UL) // sectors: 3
-#define FLASH_SECTOR_SPLASH (5UL)
-#define FLASH_LENGTH_SPLASH (153600UL) // sectors: 37
-#define FLASH_SECTOR_CLOUDS (43UL)
-#define FLASH_LENGTH_CLOUDS (153600UL) // sectors: 37
-#define FLASH_SECTOR_ICE_FPV_512x300 (81UL)
-#define FLASH_LENGTH_ICE_FPV_512x300 (12882892UL) // sectors: 3145
-//Total sectors = 4096, free sectors = 869
-//Total flash = 16777216, free flash = 3559424
+#define FLASH_LENGTH_MARBLE (1409867791UL) // sectors: 344206
+#define FLASH_SECTOR_SPLASH (1UL)
+#define FLASH_LENGTH_SPLASH (96000UL) // sectors: 23
+#define FLASH_SECTOR_CLOUDS (25UL)
+#define FLASH_LENGTH_CLOUDS (-2147450880UL) // sectors: 524296
+#define FLASH_SECTOR_ICE_FPV_512x300 (25UL)
+#define FLASH_LENGTH_ICE_FPV_512x300 (4096UL) // sectors: 1
+//Total sectors = 4096, free sectors = 4070
+//Total flash = 16777216, free flash = 16670720
 //
 #else // (0 == PROGRAM_FLASH_FROM_USD)
 //Minimal demos when programming the EVE flash so the 
@@ -108,12 +108,12 @@
 #define   BMP_SCROLL         (0)  //1=scrolling background (cloud.a8z)
                                   //0=static image (splash.a8z)
 #define SOUND_DEMO           (0)  //Uses uSD
-#define   SOUND_VOICE        (1)  //1=VOI_8K.RAW, 0=MUS_8K.RAW
-#define   SOUND_PLAY_TIMES   (1)
-#define LOGO_DEMO            (1)  //Rotating logo (the PNG or ARGB image
+#define   SOUND_VOICE        (0)  //1=VOI_8K.RAW, 0=MUS_8K.RAW
+#define   SOUND_PLAY_TIMES   (0)
+#define LOGO_DEMO            (0)  //Rotating logo (the PNG or ARGB image
                                   //data is stored in the Seeeduino's flash)
 #define LOGO_PNG_0_ARGB2_1   (0)  //Compressed ARGB is 5408 bytes smaller
-#define BOUNCE_DEMO          (1)  //Ball-and-rubber-band demo.
+#define BOUNCE_DEMO          (0)  //Ball-and-rubber-band demo.
 #define MARBLE_DEMO          (0)  //Marble must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
                                   //(bluemarb.a8z)
@@ -335,7 +335,7 @@
 //============================================================================
 // Remotely control the backlight (debug only).
 #if (DEBUG_LEVEL != DEBUG_NONE)
-#define REMOTE_BACKLIGHT_DEBUG (0)
+#define REMOTE_BACKLIGHT_DEBUG (1)
 #endif // (DEBUG_LEVEL != DEBUG_NONE)
 //============================================================================
 // Test code for Reset_EVE_Coprocessor() (debug only).

@@ -96,7 +96,7 @@ uint16_t Initialize_Flash_From_uSD(uint16_t FWol,
   // files. .a4z is 4x4 (higher quality, larger) and .a8z is 8x8 (lower
   // quality, smaller). I typically just use the "thorough" setting in
   // Eve Asset Builder.
-  // For this 1024 x 600 display the BT817 struggles with the 4x4 block
+  // For this 800 x 480 display the BT817 struggles with the 4x4 block
   // size. The 8x8 works fine and still looks great.
   // Since ATSC is already compressed, zlib does not do much, but
   // the uSD is slow and the decompression is free thanks to the EVE.
@@ -270,9 +270,9 @@ uint16_t Add_Bitmap_To_Display_List(uint16_t FWol)
                      EVE_ENC_BITMAP_HANDLE(background_bitmap_handle));
 
 #if (0==BMP_SCROLL) //1 for scroll, 0 for static bitmap
-  FWol=FLASH_SETBITMAP(FWol,FLASH_SECTOR_SPLASH,EVE_FORMAT_COMPRESSED_RGBA_ASTC_8x8_KHR,1024,600);
+  FWol=FLASH_SETBITMAP(FWol,FLASH_SECTOR_SPLASH,EVE_FORMAT_COMPRESSED_RGBA_ASTC_8x8_KHR,LCD_WIDTH,LCD_HEIGHT);
 #else // (0==BMP_SCROLL) //1 for scroll, 0 for static bitmap
-  FWol=FLASH_SETBITMAP(FWol,FLASH_SECTOR_CLOUDS,EVE_FORMAT_COMPRESSED_RGBA_ASTC_8x8_KHR,1024,600);
+  FWol=FLASH_SETBITMAP(FWol,FLASH_SECTOR_CLOUDS,EVE_FORMAT_COMPRESSED_RGBA_ASTC_8x8_KHR,LCD_WIDTH,LCD_HEIGHT);
 #endif // (0==BMP_SCROLL) //1 for scroll, 0 for static bitmap
 
   FWol=EVE_Cmd_Dat_0(FWol,
