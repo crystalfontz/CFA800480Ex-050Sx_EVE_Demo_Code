@@ -55,25 +55,25 @@ Creating the files:
 
 Configuring the demo code:
 1. Load the files on an SD card and connect to the Seeeduino (see pinout)
-2. Set PROGRAM_FLASH_FROM_USD to 0
+2. Set PROGRAM_FLASH_FROM_USD to 1
 3. Compile and upload the firmware
 4. Watch the serial monitor, the code will export the memory locations that are needed for the demo code to work
 5. Take the macros that are exported from the code and insert them on line 92 of CFA10100_defines.h
-6. Set PROGRAM_FLASH_FROM_USD to 1
+6. Set PROGRAM_FLASH_FROM_USD to 0
 7. Set VIDEO_DEMO to 1 
 8. Compile and upload the code
 
-Here is an example of the macros that will exported from the code:
-#define FLASH_SECTOR_MARBLE (1UL)
-#define FLASH_LENGTH_MARBLE (14400UL) // sectors: 3
-#define FLASH_SECTOR_SPLASH (5UL)
-#define FLASH_LENGTH_SPLASH (153600UL) // sectors: 37
-#define FLASH_SECTOR_CLOUDS (43UL)
-#define FLASH_LENGTH_CLOUDS (153600UL) // sectors: 37
-#define FLASH_SECTOR_ICE_FPV_512x300 (81UL)
+Here is an example of the macros that will exported from the code:\
+#define FLASH_SECTOR_MARBLE (1UL)\
+#define FLASH_LENGTH_MARBLE (14400UL) // sectors: 3\
+#define FLASH_SECTOR_SPLASH (5UL)\
+#define FLASH_LENGTH_SPLASH (153600UL) // sectors: 37\
+#define FLASH_SECTOR_CLOUDS (43UL)\
+#define FLASH_LENGTH_CLOUDS (153600UL) // sectors: 37\
+#define FLASH_SECTOR_ICE_FPV_512x300 (81UL)\
 #define FLASH_LENGTH_ICE_FPV_512x300 (12882892UL) // sectors: 3145
 
-
+For an in-depth guide to loading custom images on our EVE lineup of displays without an SD card (using the Seeeduino's flash memory), please refer to our blog post [available here](https://www.crystalfontz.com/blog/custom-images-on-eve-displays/).
 
 ## Connection Details
 #### To [CFA10098 Adapter Board](https://www.crystalfontz.com/product/cfa10098) (See kits above)
