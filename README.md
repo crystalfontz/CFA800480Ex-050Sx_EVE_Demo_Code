@@ -14,10 +14,10 @@ For more information on our full list of EVE displays, please click [here](https
 
  
 Full Functional Seeeduino Demo Kits for these products can be found here:  
-[CFAF800480E1-050SC-KIT](https://www.crystalfontz.com/product/cfa800480e3050sckit) - Capacitive Touch Dev Kit\
-[CFAF800480E2-050SC-KIT](https://www.crystalfontz.com/product/cfa800480e3050sckit) - Capacitive Touch With Overhanging Glass Dev Kit\
-[CFAF800480E1-050SR-KIT](https://www.crystalfontz.com/product/cfa800480e3050srkit) - Resistive Touch Dev Kit\
-[CFAF800480E1-050SN-KIT](https://www.crystalfontz.com/product/cfa800480e3050snkit) - Non-Touch Dev Kit
+[CFA800480E3-050SC-KIT](https://www.crystalfontz.com/product/cfa800480e3050sckit) - Capacitive Touch Dev Kit\
+[CFA800480E3-050SW-KIT](https://www.crystalfontz.com/product/cfa800480e3050swkit) - Capacitive Touch With Overhanging Glass Dev Kit\
+[CFA800480E3-050SR-KIT](https://www.crystalfontz.com/product/cfa800480e3050srkit) - Resistive Touch Dev Kit\
+[CFA800480E3-050SN-KIT](https://www.crystalfontz.com/product/cfa800480e3050snkit) - Non-Touch Dev Kit
 
 ## Navigating the Code
 
