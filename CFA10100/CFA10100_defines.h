@@ -68,38 +68,43 @@
 // Seeeduino / Arduino flash. The symptom will be a programming error
 // from AVRdude.
 //
-#define BMP_DEMO             (1)  //Images must already be programmed into
+#define BMP_DEMO             (0)  //Images must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
 #define   BMP_SCROLL         (0)  //1=scrolling background (cloud.a8z)
                                   //0=static image (splash.a8z)
 #define SOUND_DEMO           (0)  //Uses uSD
 #define   SOUND_VOICE        (1)  //1=VOI_8K.RAW, 0=MUS_8K.RAW
 #define   SOUND_PLAY_TIMES   (1)
-#define LOGO_DEMO            (1)  //Rotating logo (the PNG or ARGB image
+#define LOGO_DEMO            (0)  //Rotating logo (the PNG or ARGB image
                                   //data is stored in the Seeeduino's flash)
 #define LOGO_PNG_0_ARGB2_1   (1)  //Compressed ARGB is 5408 bytes smaller
-#define BOUNCE_DEMO          (1)  //Ball-and-rubber-band demo.
+#define BOUNCE_DEMO          (0)  //Ball-and-rubber-band demo.
 #define MARBLE_DEMO          (0)  //Marble must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
                                   //(bluemarb.a8z)
 #define TOUCH_DEMO           (1)
-#define VIDEO_DEMO           (0)  //Video must already be programmed into
+#define VIDEO_DEMO           (1)  //Video must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
                                   //(Ice_400.avi)
-//
+#define   VIDEO_BOUNCE       (0)  //Bounce the video around the screen
+
+#define FLASH_VIDEO_WIDTH  ((uint16_t)800) //Define the width of the video
+#define FLASH_VIDEO_HEIGHT ((uint16_t)480) //Define the height of the video
+
 // These should have been copied from the debug console when
 // you built with PROGRAM_FLASH_FROM_USD set
 #define FLASH_SECTOR_MARBLE (1UL)
-#define FLASH_LENGTH_MARBLE (1409867791UL) // sectors: 344206
+#define FLASH_LENGTH_MARBLE (549978500UL) // sectors: 134272
 #define FLASH_SECTOR_SPLASH (1UL)
-#define FLASH_LENGTH_SPLASH (96000UL) // sectors: 23
-#define FLASH_SECTOR_CLOUDS (25UL)
+#define FLASH_LENGTH_SPLASH (0UL) // sectors: 0
+#define FLASH_SECTOR_CLOUDS (1UL)
 #define FLASH_LENGTH_CLOUDS (-2147450880UL) // sectors: 524296
-#define FLASH_SECTOR_ICE_FPV_512x300 (25UL)
-#define FLASH_LENGTH_ICE_FPV_512x300 (4096UL) // sectors: 1
-//Total sectors = 4096, free sectors = 4070
-//Total flash = 16777216, free flash = 16670720
-//
+#define FLASH_SECTOR_ICE_FPV_512x300 (1UL)
+#define FLASH_LENGTH_ICE_FPV_512x300 (5113838UL) // sectors: 1248
+//Total sectors = 4096, free sectors = 2846
+//Total flash = 16777216, free flash = 11657216
+
+
 #else // (0 == PROGRAM_FLASH_FROM_USD)
 //Minimal demos when programming the EVE flash so the 
 //Seeeduino / Arduino flash does not overflow

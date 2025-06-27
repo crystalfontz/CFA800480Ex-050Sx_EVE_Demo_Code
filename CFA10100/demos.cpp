@@ -1266,9 +1266,6 @@ uint16_t Set_Backlight_From_Touch(uint16_t FWol,
 //============================================================================
 #if (0 != VIDEO_DEMO)
 
-#define FLASH_VIDEO_WIDTH  ((uint16_t)400)
-#define FLASH_VIDEO_HEIGHT ((uint16_t)240)
-
 //Keep track of the frame
 uint8_t
   video_frame_delay;
@@ -1472,6 +1469,7 @@ uint16_t Update_Video_Frame(uint16_t FWol)
     video_frame_delay=0;
     //Bounce the video around the screen.
 
+    #if (0 != VIDEO_BOUNCE)
     //Move X, bouncing
     if(video_x_vel < 0)
       {
@@ -1514,6 +1512,10 @@ uint16_t Update_Video_Frame(uint16_t FWol)
         }
       }
     video_y_pos+=video_y_vel;
+    #else
+    video_y_pos = 0;
+    video_x_pos = 0;
+    #endif
         
     //The previous video frame render should be complete by now. Check
     //and see if rendering that frame completed the video.
