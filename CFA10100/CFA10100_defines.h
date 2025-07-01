@@ -68,7 +68,7 @@
 // Seeeduino / Arduino flash. The symptom will be a programming error
 // from AVRdude.
 //
-#define BMP_DEMO             (0)  //Images must already be programmed into
+#define BMP_DEMO             (1)  //Images must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
 #define   BMP_SCROLL         (0)  //1=scrolling background (cloud.a8z)
                                   //0=static image (splash.a8z)
@@ -86,23 +86,23 @@
 #define VIDEO_DEMO           (1)  //Video must already be programmed into
                                   //flash by using PROGRAM_FLASH_FROM_USD
                                   //(Ice_400.avi)
-#define   VIDEO_BOUNCE       (0)  //Bounce the video around the screen
+#define   VIDEO_BOUNCE       (1)  //Bounce the video around the screen
 
-#define FLASH_VIDEO_WIDTH  ((uint16_t)800) //Define the width of the video
-#define FLASH_VIDEO_HEIGHT ((uint16_t)480) //Define the height of the video
+#define FLASH_VIDEO_WIDTH  ((uint16_t)400) //Define the width of the video ICE_400.avi = 400x240
+#define FLASH_VIDEO_HEIGHT ((uint16_t)240) //Define the height of the video
 
 // These should have been copied from the debug console when
 // you built with PROGRAM_FLASH_FROM_USD set
 #define FLASH_SECTOR_MARBLE (1UL)
-#define FLASH_LENGTH_MARBLE (549978500UL) // sectors: 134272
+#define FLASH_LENGTH_MARBLE (0UL) // sectors: 0
 #define FLASH_SECTOR_SPLASH (1UL)
-#define FLASH_LENGTH_SPLASH (0UL) // sectors: 0
-#define FLASH_SECTOR_CLOUDS (1UL)
+#define FLASH_LENGTH_SPLASH (96000UL) // sectors: 23
+#define FLASH_SECTOR_CLOUDS (25UL)
 #define FLASH_LENGTH_CLOUDS (-2147450880UL) // sectors: 524296
-#define FLASH_SECTOR_ICE_FPV_512x300 (1UL)
-#define FLASH_LENGTH_ICE_FPV_512x300 (5113838UL) // sectors: 1248
-//Total sectors = 4096, free sectors = 2846
-//Total flash = 16777216, free flash = 11657216
+#define FLASH_SECTOR_ICE_FPV_512x300 (25UL)
+#define FLASH_LENGTH_ICE_FPV_512x300 (12882892UL) // sectors: 3145
+//Total sectors = 4096, free sectors = 925
+//Total flash = 16777216, free flash = 3788800
 
 
 #else // (0 == PROGRAM_FLASH_FROM_USD)
