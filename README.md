@@ -1,3 +1,6 @@
+This repository is being deprecated. Please refer to: https://github.com/crystalfontz/CFA_E_BT817
+
+
 # CFA800480Ex-050Sx EVE Demo Code
 
 This example Seeeduino (Arduino clone) code is for the Crystalfontz line of 5" displays powered by a Bridgetek EVE chip. These displays are driven by the powerful BT817 chip and are available in capacitive touch, resistive touch, and non-touch. They all come with a sunlight readable backlight that boasts 1000 nits when no additional layer is on top of the display. Please refer to the datasheets for more information.
@@ -110,5 +113,6 @@ For an in-depth guide to loading custom images on our EVE lineup of displays wit
 
 ## Additional Accessories
 Additional accessories for the products can be found at the bottom of each of the product pages. This will include 30 position FFC cables, wires, and any accessory boards that are available.
+
 
 
